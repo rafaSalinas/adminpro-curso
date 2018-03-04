@@ -1,0 +1,11 @@
+<h3>{{ leyenda }}</h3>
+
+<div class="input-group">
+    <!-- Para hacer referencia de este input en el decoradror ViewChild le ponemos un # seguido del nombre de referencia-->
+    <input #txtProgress type="number" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" name="progreso" [(ngModel)]="progreso" (ngModelChange)="onChanges($event)" min="1" max="100">
+    <!--ngModelChanges es un evento que emiten todos los ngModel al cambiar -->
+    <div class="input-group-append">
+        <button class="btn btn-outline-danger" type="button" (click)="cambiarValor(-5)"><i class="mdi mdi-minus"></i></button>
+        <button class="btn btn-outline-primary" type="button" (click)="cambiarValor(+5)"><i class="mdi mdi-plus"></i></button>
+    </div>
+</div>
